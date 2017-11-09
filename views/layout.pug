@@ -1,0 +1,19 @@
+include ./mixins
+doctype html
+html
+    head
+    title #{title}
+    meta(charset='UTF-8')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    +js
+body
+        
+    //-Navigation bar
+    +nav
+    
+    .container
+      block content
+        br
+        hr
+        footer
+      p copyright &copy; 2017

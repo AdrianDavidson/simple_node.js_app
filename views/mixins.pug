@@ -1,0 +1,40 @@
+//- NAV BAR MIXIN
+mixin nav
+  .navbar.navbar-inverse
+    .container
+      .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='/') Adrians Portfolio
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li
+            a(href='/') Home
+          li
+            a(href='/CV') My CV
+          li
+            a(href='/contact') Contact
+        
+mixin js 
+  script(src = '/bower_components/jquery/dist/jquery.js')
+  script(src = '/bower_components/bootstrap/dist/js/bootstrap.js')
+    
+mixin address 
+  h3 Adrian Davidson
+  h5 Address:
+  li Radharc, 
+  li Barryscourt, 
+  li Carrigtwohill, 
+  li Co.Cork 
+  br
+  .row
+    .col-md-4 +353 83 825 1394
+    .col-md-4 Adrian.davidson@mycit.ie
+    .col-md-4 
+      a(href='https://www.linkedin.com/in/adrian-davidson/') Linked in
+//- 
+//- mixin img
+//-   img(src="/img/face.jpg")
