@@ -1,0 +1,50 @@
+.footer{
+  bottom: 0;
+}
+
+#navbar{
+  width: 100%;
+  color: white;
+}
+.col-md-4{
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+}
+.affix {
+    top: 0;
+}
+.col-xs-6.col-sm-3{
+  float: right;
+  position:static;
+}
+.layout{
+  float: right;
+  width: 30%;
+}
+.buy{
+  padding:10%;
+}
+.hh{
+  width: 500px;
+  height: 100px;
+  background-image: url("http://www.tate.org.uk/sites/all/themes/tatebase/images/tate-head-logo_1.png");
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.left{
+  padding: 10px;
+}
+.right{
+  padding: 10px;
+}
+#blabla{
+  margin-top: 10%;
+}
+.welcome{
+  font-size: 100px;
+}
+#ft{
+  text-align: center;
+  background-color: white;
+}

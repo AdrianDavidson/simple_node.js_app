@@ -4,6 +4,14 @@
  * Licensed under the MIT license
  */
 
+ $(function(){
+    $('.navbar').affix({
+      offset: {
+        /* Affix the navbar after scroll below header */
+        top: $("header").outerHeight(true)}
+    });
+});
+
 if (typeof jQuery === 'undefined') {
   throw new Error('Bootstrap\'s JavaScript requires jQuery')
 }

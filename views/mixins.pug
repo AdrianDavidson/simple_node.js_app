@@ -1,40 +1,102 @@
-//- NAV BAR MIXIN
+//- R00138984
+//- Adrian Davidson
+//- serverside frameworks
+
+mixin header 
+  header.container-fluid
+    .hh
+//-                                            NAV BAR MIXIN
+//- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 mixin nav
-  .navbar.navbar-inverse
+  // Sticky navBar
+  nav.navbar.navbar-default
     .container
-      .navbar-header
-        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-          span.sr-only Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        a.navbar-brand(href='/') Adrians Portfolio
-      .collapse.navbar-collapse
-        ul.nav.navbar-nav
-          li
-            a(href='/') Home
-          li
-            a(href='/CV') My CV
-          li
-            a(href='/contact') Contact
-        
+    // Brand and toggle get grouped for better mobile display
+    .navbar-header
+      a.navbar-brand(href='#') TATE Gallery
+    // Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          a(href='/artist') All Art
+        li
+          a(href='/genre') Sort Lowest to Highest
+        li
+          a(href='/artwork') Date Published
+          
+//-                                             JS MIXIN
+//- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 mixin js 
   script(src = '/bower_components/jquery/dist/jquery.js')
   script(src = '/bower_components/bootstrap/dist/js/bootstrap.js')
-    
-mixin address 
-  h3 Adrian Davidson
-  h5 Address:
-  li Radharc, 
-  li Barryscourt, 
-  li Carrigtwohill, 
-  li Co.Cork 
-  br
-  .row
-    .col-md-4 +353 83 825 1394
-    .col-md-4 Adrian.davidson@mycit.ie
-    .col-md-4 
-      a(href='https://www.linkedin.com/in/adrian-davidson/') Linked in
-//- 
-//- mixin img
-//-   img(src="/img/face.jpg")
+  script(src = '/bower_components/bootstrap/dist/js/myJS.js')
+  
+//-                                               GREETING PAGE
+//- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+mixin intro   
+  #blabla
+    .row
+      .col-md-6
+        .left
+          form(action='/artist')
+            h2.form-signin-heading New users please sign up
+            p Name 
+              input#inputName.form-control(type='name', placeholder='enter name please..', required='', autofocus='')
+            p Email 
+              input#inputEmail.form-control(type='email', placeholder='Email address..', required='', autofocus='')
+            p Password 
+              input#inputPassword.form-control(type='password', placeholder='Password..', required='')
+              button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign in
+
+            //- Admin login
+      .col-md-6
+        .right
+          form(action='/admin')
+            h2.form-signin-heading Admin Log in
+            p Email 
+              input#inputEmail.form-control(type='email', placeholder='Email address..', required='', autofocus='')
+            p Password 
+              input#inputPassword.form-control(type='password', placeholder='Password..', required='')
+            button.btn.btn-lg.btn-primary.btn-block(type='submit') Log in
+
+//-                                             SHOPPING CART MIXIN
+//- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++            
+mixin shoppingCart
+  link(href='//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet')
+  .container
+    table#cart.table.table-hover.table-condensed
+      thead
+        tr
+          th(style='width:50%') Product
+          th(style='width:10%') Price
+          th.text-center(style='width:22%') Subtotal
+          th(style='width:10%')
+      tbody
+        tr
+          td(data-th='Product')
+            .row
+              .col-sm-2.hidden-xs
+                img.img-responsive(src='http://placehold.it/300x300', alt='...')
+              .col-sm-10
+                h4.nomargin Product 1
+                p
+                  | Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet.
+          td(data-th='Price') $1.99
+          td.text-center(data-th='Subtotal') 1.99
+          td.actions(data-th='')
+            button.btn.btn-info.btn-sm
+              i.fa.fa-refresh
+            button.btn.btn-danger.btn-sm
+              i.fa.fa-trash-o
+      tfoot
+        tr.visible-xs
+          td.text-center
+            strong Total 1.99
+        tr
+          td.hidden-xs(colspan='2')
+          td.hidden-xs.text-center
+            strong Total $1.99
+          td
+            a.btn.btn-success.btn-block(href='#')
+              | Checkout 
+              i.fa.fa-angle-right

@@ -1,19 +1,48 @@
+//- R00138984
+//- Adrian Davidson
+//- serverside frameworks
+
 include ./mixins
 doctype html
 html
     head
     title #{title}
     meta(charset='UTF-8')
-    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='bower_components/bootstrap/dist/css/stylesheet.css')
     +js
 body
-        
-    //-Navigation bar
-    +nav
+  .container
+    block content
+      br
+      hr
     
-    .container
-      block content
-        br
-        hr
-        footer
-      p copyright &copy; 2017
+    //- Fooer
+    .container.text-center
+    hr
+    .row
+      .col-lg-12
+        .col-md-3
+          ul.nav.nav-pills.nav-stacked
+            p Tate Business Group Ltd.
+              br
+              Tate House, 29 Verey Road
+              br
+              Woodside Estate,
+              br
+              Dunstable Bedfordshire
+              br
+              LU5 4TT
+        .col-md-3
+          ul.nav.nav-pills.nav-stacked
+            
+        .col-md-3
+          ul.nav.nav-pills.nav-stacked
+        
+        .col-md-3
+          ul.nav.nav-pills.nav-stacked
+            a(href='tel:555-555-5555') +44 1582 500200
+            br
+            a(href='mailto:enquiries@tatebg.com', target='_top') enquiries@tatebg.com
+    hr
+    .row

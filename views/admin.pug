@@ -1,0 +1,42 @@
+//- R00138984
+//- Adrian Davidson
+//- serverside frameworks
+
+extends layout
+block content
+    .row
+      h2 Add Product
+      .row
+        .col-md-8
+          .left              
+              form(action='/submitform/', method='POST')
+              fieldset
+                label(for='name') Artist Name: 
+                input#title(type='text', name='name', autofocus='')
+                br
+                label(for='name') Price: 
+                input#price(type='text', name='price', autofocus='')
+                br
+                label(for='name') Image Url: 
+                input#img(type='text', name='thumbnailUrl', autofocus='')
+                br
+                input(type='submit', value='Add Product')
+                    
+          table.table
+            thead.thead-inverse
+              tr
+                th #
+                th artist name
+                th Price
+                th Image
+          //- .row
+          //-   each rowsOfImgs in row
+          //- 
+          //-     .col-md-4
+          //-       p= rowsOfImgs.artist
+          //-     .col-md-4
+          //-       span.text-muted="€" + rowsOfImgs.price
+          //-     .col-md-4
+          //-       img.img-responsive(src= rowsOfImgs.thumbnailUrl, alt='imgs from database')
+          //- 
+          //- 

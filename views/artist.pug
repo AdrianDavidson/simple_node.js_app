@@ -1,0 +1,34 @@
+//- R00138984
+//- Adrian Davidson
+//- serverside frameworks
+
+extends layout
+
+block content
+  +header
+  +nav
+  h1.page-header #{h1}
+  
+  //- Loading in the images and text from a databse
+  .row
+    each rowsOfImgs in row
+      .col-xs-6.col-sm-3
+        img.img-responsive(src= rowsOfImgs.thumbnailUrl, alt='imgs from database')
+        h4= "€" + rowsOfImgs.price
+        span.product-name= rowsOfImgs.title
+        .buy 
+          a.btn.btn-info(href='/artwork', role='button') Add to Cart
+          .layout  
+            td(data-th='Quantity')
+              input.form-control.text-center(type='number', value='0')
+
+
+
+  ul.pager
+    li
+      button(onclick='nextValue()') Next
+    li
+      button(onclick='prevValue()') Prev
+      
+  +shoppingCart
+  
